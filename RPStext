@@ -1,0 +1,45 @@
+#Text based rock paper scissors game
+
+import sys
+from random import randint
+import keyboard
+
+print ("Hello.  What is your name?")
+name = input()
+t = ["Rock", "Paper", "Scissors"]
+compguess = t[randint(0,2)]
+print("well, " + name + " choose Rock, Paper, or Scissors")
+
+guess = False
+
+while guess == False:
+#for guessesTaken in range(1, 7):
+	#print("Take a guess.")
+	guess = input("Rock, Paper, or Scissors? ")
+
+	if guess == compguess:
+		print("It's a tie!")
+		
+	elif guess == "Rock" and compguess == "Scissors":
+		print("You win!")
+
+	elif guess == "Rock" and compguess == "Paper":
+		print("Comp wins!")
+
+	elif guess == "Scissors" and compguess == "Rock":
+		print("Comp wins!")
+
+	elif guess == "Scissors" and compguess == "Paper":
+		print("You win!")
+
+	elif guess == "Paper" and compguess == "Scissors":
+		print("Comp wins!")
+
+	elif guess == "Paper" and compguess == "Rock":
+		print("You win!")
+
+	else:
+		print("That's not a valid play.  Check your spelling!")
+
+	guess = False
+	compguess = t[randint(0,2)]
